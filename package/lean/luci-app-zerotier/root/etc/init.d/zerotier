@@ -21,10 +21,8 @@ start_instance() {
 		echo "disabled in config"
 		return 1
 	fi
-  
-  [ -d /etc/config/zero ] || mkdir -p /etc/config/zero
-  config_path=/etc/config/zero
-  
+
+	config_get config_path $cfg 'config_path'
 	config_get_bool port $cfg 'port'
 	config_get secret $cfg 'secret'
 
